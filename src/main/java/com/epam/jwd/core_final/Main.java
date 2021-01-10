@@ -16,8 +16,5 @@ public class Main {
     public static void main(String[] args) {
 
         //Application.start();
-        NasaContext nasaContext = new NasaContext();
-        nasaContext.populateCrewMembersList();
-        System.out.println("dsds");
     }
 }
