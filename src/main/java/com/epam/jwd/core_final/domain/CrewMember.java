@@ -11,28 +11,28 @@ import java.util.Objects;
  */
 public class CrewMember extends AbstractBaseEntity {
 
-    private static Long crewMemberId = 0L;
+    private static Long id = 0L;
 
-    private Role crewMemberRole;
-    private Rank crewMemberRank;
+    private Role role;
+    private Rank rank;
     private Boolean isReadyForNextMissions = true;
 
     public CrewMember(Long crewMemberRoleId, String crewMemberName, Long crewMemberRankId) {
-        super(++crewMemberId, crewMemberName);
-        this.crewMemberRole = Role.resolveRoleById(crewMemberRoleId);
-        this.crewMemberRank = Rank.resolveRankById(crewMemberRankId);
+        super(++id, crewMemberName);
+        this.role = Role.resolveRoleById(crewMemberRoleId);
+        this.rank = Rank.resolveRankById(crewMemberRankId);
     }
 
     public static Long getCrewMemberId() {
-        return crewMemberId;
+        return id;
     }
 
     public Role getCrewMemberRole() {
-        return crewMemberRole;
+        return role;
     }
 
-    public Rank getCrewMemberRank() {
-        return crewMemberRank;
+    public Rank getRank() {
+        return rank;
     }
 
     public Boolean isReadyForNextMissions() {
@@ -48,23 +48,24 @@ public class CrewMember extends AbstractBaseEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CrewMember that = (CrewMember) o;
-        return crewMemberRole == that.crewMemberRole &&
-                crewMemberRank == that.crewMemberRank &&
-                crewMemberId.equals(that.crewMemberId);
+        return role == that.role &&
+                rank == that.rank &&
+                id.equals(that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(crewMemberRole, crewMemberRank, crewMemberId);
+        return Objects.hash(role, rank, id);
     }
 
     @Override
     public String toString() {
         return "CrewMember{" +
-                "crewMemberName=" + getName() +
-                ", crewMemberRole=" + crewMemberRole +
-                ", crewMemberRank=" + crewMemberRank +
-                ", crewMemberId=" + crewMemberId +
+                "name=" + getName() +
+                ", role=" + role +
+                ", rank=" + rank +
+                ", id=" + id +
+                ", isReadyForNextMissions=" + isReadyForNextMissions +
                 '}';
     }
 }

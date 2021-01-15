@@ -25,12 +25,14 @@ public class CrewMemberFactory implements EntityFactory<CrewMember> {
     }
 
     @Override
-    public CrewMember create(Object... args){
+    public CrewMember create(Object... args) throws NullPointerException{
         CrewMember newCrewMember = null;
         try{
-            newCrewMember = new CrewMemberCriteria().setCrewMemberRoleId((Long) args[0]).setCrewMemberName((String) args[1]).setCrewMemberRankId((Long) args[2]).build();
+            newCrewMember = new CrewMember((Long) args[0], (String) args[1], (Long) args[2]);
+
         } catch (ClassCastException e){
             LOGGER.info("Cannot create new crew member. Wrong argument type");
+            throw new NullPointerException("Crew Member was not created");
         }
         return newCrewMember;
     }

@@ -12,39 +12,58 @@ public class CrewMemberCriteria extends Criteria<CrewMember> {
     private Long crewMemberRankId;
     private Boolean isReadyForNextMissions;
 
-//    public CrewMemberCriteria(Long crewMemberRoleId, String crewMemberName, Long crewMemberRankId) {
-//        this.crewMemberRoleId = crewMemberRoleId;
-//        this.crewMemberName = crewMemberName;
-//        this.crewMemberRankId = crewMemberRankId;
-//        //this.isReadyForNextMissions = isReadyForNextMissions;
-//    }
-
-    public CrewMemberCriteria(){
+    private CrewMemberCriteria(){
 
     }
 
-    public CrewMemberCriteria setCrewMemberRoleId(Long crewMemberRoleId){
-        this.crewMemberRoleId = crewMemberRoleId;
-        return this;
+    public String getCrewMemberName() {
+        return crewMemberName;
     }
 
-    public CrewMemberCriteria setCrewMemberName(String crewMemberName) {
-        this.crewMemberName = crewMemberName;
-        return this;
+    public Long getCrewMemberRoleId() {
+        return crewMemberRoleId;
     }
 
-    public CrewMemberCriteria setCrewMemberRankId(Long crewMemberRankId){
-        this.crewMemberRankId = crewMemberRankId;
-        return this;
+    public Long getCrewMemberRankId() {
+        return crewMemberRankId;
     }
 
-    public CrewMemberCriteria setReadyForNextMissions(Boolean readyForNextMissions) {
-        isReadyForNextMissions = readyForNextMissions;
-        return this;
+    public Boolean getReadyForNextMissions() {
+        return isReadyForNextMissions;
     }
 
-    public CrewMember build() {
-        return new CrewMember(crewMemberRoleId, crewMemberName, crewMemberRankId);
+    public static Builder newBuilder(){
+        return new CrewMemberCriteria().new Builder();
     }
 
+    public class Builder{
+
+        private Builder(){
+
+        }
+
+        public Builder setCrewMemberRoleId(Long crewMemberRoleId){
+            CrewMemberCriteria.this.crewMemberRoleId = crewMemberRoleId;
+            return this;
+        }
+
+        public Builder setCrewMemberName(String crewMemberName) {
+            CrewMemberCriteria.this.crewMemberName = crewMemberName;
+            return this;
+        }
+
+        public Builder setCrewMemberRankId(Long crewMemberRankId){
+            CrewMemberCriteria.this.crewMemberRankId = crewMemberRankId;
+            return this;
+        }
+
+        public Builder setReadyForNextMissions(Boolean readyForNextMissions) {
+            CrewMemberCriteria.this.isReadyForNextMissions = readyForNextMissions;
+            return this;
+        }
+
+        public CrewMemberCriteria build() {
+            return CrewMemberCriteria.this;
+        }
+    }
 }
