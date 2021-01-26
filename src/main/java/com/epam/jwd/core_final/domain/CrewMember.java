@@ -13,7 +13,7 @@ public class CrewMember extends AbstractBaseEntity {
 
     private static Long id = 0L;
 
-    private Role role;
+    private final Role role;
     private Rank rank;
     private Boolean isReadyForNextMissions = true;
 
@@ -23,11 +23,17 @@ public class CrewMember extends AbstractBaseEntity {
         this.rank = Rank.resolveRankById(crewMemberRankId);
     }
 
+    public CrewMember(Role crewMemberRole, String crewMemberName, Rank crewMemberRank) {
+        super(++id, crewMemberName);
+        this.role = crewMemberRole;
+        this.rank = crewMemberRank;
+    }
+
     public static Long getCrewMemberId() {
         return id;
     }
 
-    public Role getCrewMemberRole() {
+    public Role getRole() {
         return role;
     }
 

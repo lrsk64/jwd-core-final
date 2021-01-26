@@ -17,14 +17,6 @@ public final class PropertyReaderUtil {
 
     private static final Properties properties = new Properties();
 
-    private static String inputRootDir;
-    private static String outputRootDir;
-    private static String crewFileName;
-    private static String missionsFileName;
-    private static String spaceshipsFileName;
-    private static double fileRefreshRate;
-    private static DateTimeFormatter dateTimeFormat;
-
     private PropertyReaderUtil() {
     }
 

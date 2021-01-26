@@ -1,69 +1,74 @@
 package com.epam.jwd.core_final.criteria;
 
 import com.epam.jwd.core_final.domain.CrewMember;
+import com.epam.jwd.core_final.domain.Rank;
+import com.epam.jwd.core_final.domain.Role;
 
 /**
  * Should be a builder for {@link com.epam.jwd.core_final.domain.CrewMember} fields
  */
 public class CrewMemberCriteria extends Criteria<CrewMember> {
 
-    private String crewMemberName;
-    private Long crewMemberRoleId;
-    private Long crewMemberRankId;
+    private Long id;
+    private String name;
+    private Role role;
+    private Rank rank;
     private Boolean isReadyForNextMissions;
 
-    private CrewMemberCriteria(){
+//    public CrewMemberCriteria(String name, Long roleId, Long rankId) {
+//        this.name = name;
+//        this.roleId = roleId;
+//        this.rankId = rankId;
+//        this.isReadyForNextMissions = true;
+//    }
 
+
+    public Long getId() {
+        return id;
     }
 
-    public String getCrewMemberName() {
-        return crewMemberName;
+    public String getName() {
+        return name;
     }
 
-    public Long getCrewMemberRoleId() {
-        return crewMemberRoleId;
+    public Role getRole() {
+        return role;
     }
 
-    public Long getCrewMemberRankId() {
-        return crewMemberRankId;
+    public Rank getRank() {
+        return rank;
     }
 
-    public Boolean getReadyForNextMissions() {
+    public Boolean isReadyForNextMissions() {
         return isReadyForNextMissions;
     }
 
-    public static Builder newBuilder(){
-        return new CrewMemberCriteria().new Builder();
+    public CrewMemberCriteria setId(Long id){
+        this.id = id;
+        return this;
     }
 
-    public class Builder{
+    public CrewMemberCriteria setName(String name) {
+        this.name = name;
+        return this;
+    }
 
-        private Builder(){
+    public CrewMemberCriteria setRole(Role role) {
+        this.role = role;
+        return this;
+    }
 
-        }
+    public CrewMemberCriteria setRank(Rank rank) {
+        this.rank = rank;
+        return this;
+    }
 
-        public Builder setCrewMemberRoleId(Long crewMemberRoleId){
-            CrewMemberCriteria.this.crewMemberRoleId = crewMemberRoleId;
-            return this;
-        }
+    public CrewMemberCriteria setReadyForNextMissions(Boolean readyForNextMissions) {
+        isReadyForNextMissions = readyForNextMissions;
+        return this;
+    }
 
-        public Builder setCrewMemberName(String crewMemberName) {
-            CrewMemberCriteria.this.crewMemberName = crewMemberName;
-            return this;
-        }
-
-        public Builder setCrewMemberRankId(Long crewMemberRankId){
-            CrewMemberCriteria.this.crewMemberRankId = crewMemberRankId;
-            return this;
-        }
-
-        public Builder setReadyForNextMissions(Boolean readyForNextMissions) {
-            CrewMemberCriteria.this.isReadyForNextMissions = readyForNextMissions;
-            return this;
-        }
-
-        public CrewMemberCriteria build() {
-            return CrewMemberCriteria.this;
-        }
+    public CrewMember build(){
+        return new CrewMember(role, name, rank);
     }
 }

@@ -20,82 +20,53 @@ public class FlightMissionCriteria extends Criteria<FlightMission> {
     private List<CrewMember> assignedCrew;
     private MissionResult missionResult;
 
-    private FlightMissionCriteria() {
+//    public FlightMissionCriteria(String name, LocalDate startDate, LocalDate endDate,
+//                                 Long distance, Spaceship assignedSpaceship, List<CrewMember> assignedCrew, MissionResult missionResult) {
+//        this.name = name;
+//        this.startDate = startDate;
+//        this.endDate = endDate;
+//        this.distance = distance;
+//        this.assignedSpaceship = assignedSpaceship;
+//        this.assignedCrew = assignedCrew;
+//        this.missionResult = missionResult;
+//    }
+
+    public FlightMissionCriteria setName(String name) {
+        this.name = name;
+        return this;
     }
 
-    public String getName() {
-        return name;
+    public FlightMissionCriteria setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+        return this;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
+    public FlightMissionCriteria setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+        return this;
     }
 
-    public LocalDate getEndDate() {
-        return endDate;
+    public FlightMissionCriteria setDistance(Long distance) {
+        this.distance = distance;
+        return this;
     }
 
-    public Long getDistance() {
-        return distance;
+    public FlightMissionCriteria setAssignedSpaceship(Spaceship assignedSpaceship) {
+        this.assignedSpaceship = assignedSpaceship;
+        return this;
     }
 
-    public Spaceship getAssignedSpaceship() {
-        return assignedSpaceship;
+    public FlightMissionCriteria setAssignedCrew(List<CrewMember> assignedCrew) {
+        this.assignedCrew = assignedCrew;
+        return this;
     }
 
-    public List<CrewMember> getAssignedCrew() {
-        return assignedCrew;
+    public FlightMissionCriteria setMissionResult(MissionResult missionResult) {
+        this.missionResult = missionResult;
+        return this;
     }
 
-    public MissionResult getMissionResult() {
-        return missionResult;
-    }
-
-    public static FlightMissionCriteria.Builder newBuilder(){
-        return new FlightMissionCriteria().new Builder();
-    }
-
-    public class Builder{
-        private Builder() {
-        }
-
-        public Builder setName(String name) {
-            FlightMissionCriteria.this.name = name;
-            return this;
-        }
-
-        public Builder setStartDate(LocalDate startDate) {
-            FlightMissionCriteria.this.startDate = startDate;
-            return this;
-        }
-
-        public Builder setEndDate(LocalDate endDate) {
-            FlightMissionCriteria.this.endDate = endDate;
-            return this;
-        }
-
-        public Builder setDistance(Long distance) {
-            FlightMissionCriteria.this.distance = distance;
-            return this;
-        }
-
-        public Builder setAssignedSpaceship(Spaceship assignedSpaceship) {
-            FlightMissionCriteria.this.assignedSpaceship = assignedSpaceship;
-            return this;
-        }
-
-        public Builder setAssignedCrew(List<CrewMember> assignedCrew) {
-            FlightMissionCriteria.this.assignedCrew = assignedCrew;
-            return this;
-        }
-
-        public Builder setMissionResult(MissionResult missionResult) {
-            FlightMissionCriteria.this.missionResult = missionResult;
-            return this;
-        }
-
-        public FlightMissionCriteria build(){
-            return FlightMissionCriteria.this;
-        }
+    public FlightMission build(){
+        return new FlightMission(name, startDate, endDate, distance, assignedSpaceship, assignedCrew, missionResult);
     }
 }

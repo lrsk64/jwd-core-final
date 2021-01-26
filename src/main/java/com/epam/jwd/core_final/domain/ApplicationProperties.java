@@ -22,6 +22,8 @@ public final class ApplicationProperties {
     //todo
     private static ApplicationProperties instance;
 
+    private final String rootProjectDir;
+
     private final String inputRootDir;
     private final String outputRootDir;
     private final String crewFileName;
@@ -31,19 +33,9 @@ public final class ApplicationProperties {
     private final String dateTimeFormat;
     private final Properties properties = PropertyReaderUtil.loadProperties();
 
-//    public ApplicationProperties(String inputRootDir, String outputRootDir, String crewFileName, String missionsFileName,
-//                                 String spaceshipsFileName, Integer fileRefreshRate, String dateTimeFormat) {
-//        this.inputRootDir = inputRootDir;
-//        this.outputRootDir = outputRootDir;
-//        this.crewFileName = crewFileName;
-//        this.missionsFileName = missionsFileName;
-//        this.spaceshipsFileName = spaceshipsFileName;
-//        this.fileRefreshRate = fileRefreshRate;
-//        this.dateTimeFormat = dateTimeFormat;
-//    }
-
 
     private ApplicationProperties() {
+        this.rootProjectDir = "src/main/resources/";
         this.inputRootDir = properties.getProperty("inputRootDir");
         this.outputRootDir = properties.getProperty("outputRootDir");
         this.crewFileName = properties.getProperty("crewFileName");
@@ -86,5 +78,9 @@ public final class ApplicationProperties {
 
     public String getDateTimeFormat() {
         return dateTimeFormat;
+    }
+
+    public String getRootProjectDir() {
+        return rootProjectDir;
     }
 }

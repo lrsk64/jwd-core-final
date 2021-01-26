@@ -1,5 +1,7 @@
 package com.epam.jwd.core_final.exception;
 
+import java.util.Arrays;
+
 public class UnknownPropertyException extends RuntimeException{
 
     private final String propertyName;
@@ -19,17 +21,9 @@ public class UnknownPropertyException extends RuntimeException{
 
 
     public String getMessage() {
-        String message = "Property not fount in properties file.";
-        // todo
-        // you should use entityName, args (if necessary)
-        if(propertyName != null){
-            message += "Property name: " + propertyName +  ".";
-            if(args != null){
-                message += "Another info: ";
-                for (Object arg : args) {
-                    message += arg.toString();
-                }
-            }
+        String message = "Property '" + propertyName +  "' not found in properties file.";
+        if(args != null || args.length != 0){
+            message += "Another info: " + Arrays.toString(args);
         }
         return message;
     }

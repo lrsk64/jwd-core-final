@@ -1,35 +1,30 @@
 package com.epam.jwd.core_final.exception;
 
-import java.lang.reflect.Array;
-import java.security.MessageDigestSpi;
 import java.util.Arrays;
 
-public class UnknownEntityException extends RuntimeException {
+public class DuplicateEntityException extends RuntimeException{
 
     private final String entityName;
     private final Object[] args;
 
-    public UnknownEntityException(String entityName) {
-        super();
+    public DuplicateEntityException(String entityName) {
         this.entityName = entityName;
         this.args = null;
     }
 
-    public UnknownEntityException(String entityName, Object[] args) {
-        super();
+    public DuplicateEntityException(String entityName, Object[] args) {
         this.entityName = entityName;
         this.args = args;
     }
 
     @Override
     public String getMessage() {
-        // todo
-        // you should use entityName, args (if necessary)
-        String message = "Entity '" + entityName + "' does not exist.\n";
+        String message = "Entity '" + entityName + "' already exist.\n";
 
         if (args != null || args.length != 0){
             message += "Another info: " + Arrays.toString(args);
         }
         return message;
     }
+
 }

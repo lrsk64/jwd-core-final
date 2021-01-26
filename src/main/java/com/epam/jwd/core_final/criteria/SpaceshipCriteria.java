@@ -15,55 +15,28 @@ public class SpaceshipCriteria extends Criteria<Spaceship> {
     private Long flightDistance;
     private boolean isReadyForNextMissions = true;
 
-    private SpaceshipCriteria() {
+
+    public SpaceshipCriteria setName(String name) {
+        this.name = name;
+        return this;
     }
 
-    public String getName() {
-        return name;
+    public SpaceshipCriteria setCrew(Map<Role, Short> crew) {
+        this.crew = crew;
+        return this;
     }
 
-    public Map<Role, Short> getCrew() {
-        return crew;
+    public SpaceshipCriteria setFlightDistance(Long flightDistance) {
+        this.flightDistance = flightDistance;
+        return this;
     }
 
-    public Long getFlightDistance() {
-        return flightDistance;
+    public SpaceshipCriteria setReadyForNextMissions(boolean readyForNextMissions) {
+        isReadyForNextMissions = readyForNextMissions;
+        return this;
     }
 
-    public boolean isReadyForNextMissions() {
-        return isReadyForNextMissions;
-    }
-
-    public static Builder newBuilder(){
-        return new SpaceshipCriteria().new Builder();
-    }
-
-    public class Builder{
-        public Builder() {
-        }
-
-        public Builder setName(String name){
-            SpaceshipCriteria.this.name = name;
-            return this;
-        }
-
-        public Builder setCrew(Map<Role, Short> crew) {
-            SpaceshipCriteria.this.crew = crew;
-            return this;
-        }
-
-        public Builder setFlightDistance(Long flightDistance) {
-            SpaceshipCriteria.this.flightDistance = flightDistance;
-            return this;
-        }
-
-        public Builder setReadyForNextMissions(boolean readyForNextMissions) {
-            SpaceshipCriteria.this.isReadyForNextMissions = readyForNextMissions;
-            return this;
-        }
-
-        public SpaceshipCriteria build(){
-            return SpaceshipCriteria.this;
-        }
+    public Spaceship build(){
+        return new Spaceship(name, flightDistance, crew);
     }
 }

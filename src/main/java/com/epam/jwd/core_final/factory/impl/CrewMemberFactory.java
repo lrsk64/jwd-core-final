@@ -1,6 +1,5 @@
 package com.epam.jwd.core_final.factory.impl;
 
-import com.epam.jwd.core_final.criteria.CrewMemberCriteria;
 import com.epam.jwd.core_final.domain.CrewMember;
 import com.epam.jwd.core_final.factory.EntityFactory;
 import org.slf4j.Logger;
@@ -26,15 +25,40 @@ public class CrewMemberFactory implements EntityFactory<CrewMember> {
 
     @Override
     public CrewMember create(Object... args) throws NullPointerException{
-        CrewMember newCrewMember = null;
+        Object[] checkedArgs = checkArguments(args);
         try{
-            newCrewMember = new CrewMember((Long) args[0], (String) args[1], (Long) args[2]);
-
-        } catch (ClassCastException e){
-            LOGGER.info("Cannot create new crew member. Wrong argument type");
-            throw new NullPointerException("Crew Member was not created");
+            return new CrewMember((Long) checkedArgs[0], (String) checkedArgs[1], (Long) checkedArgs[2]);
+        } catch (NullPointerException e){
+            throw new NullPointerException("Crew member was not create.");
         }
-        return newCrewMember;
     }
 
+
+    private boolean checkArgumentsAmount(Object[] args) throws IllegalArgumentException{
+        if(args.length == 3){
+            return true;
+        } else{
+            throw new IllegalArgumentException("Wrong amount of arguments"); // todo write message, change exception type
+        }
+    }
+
+    private Object[] checkArguments(Object[] args) throws IllegalArgumentException{
+        String name;
+        Long rankId;
+        Long roleId;
+
+        checkArgumentsAmount(args);
+
+        name = (String) args[1];
+
+        try{
+            roleId = Long.parseLong(String.valueOf(args[0]));
+            rankId = Long.parseLong(String.valueOf(args[2]));
+
+        } catch (NumberFormatException e){
+            throw new IllegalArgumentException("Wrong arguments type"); //проверить что именно выбрасывает исключение
+        }
+
+        return new Object[]{roleId, name, rankId};
+    }
 }
