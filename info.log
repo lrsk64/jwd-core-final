@@ -1,0 +1,44 @@
+2021-01-23 00:46:52.371 [main] ERROR com.epam.jwd.core_final.Main - Error
+2021-01-23 00:48:13.517 [main] ERROR com.epam.jwd.core_final.Main - Error
+2021-01-23 23:51:44.922 [main] INFO  com.epam.jwd.core_final.util.ReadWriteFileUtil - File input not found
+2021-01-23 23:51:49.964 [main] INFO  com.epam.jwd.core_final.util.ReadWriteFileUtil - File input not found
+2021-01-23 23:52:22.774 [main] INFO  com.epam.jwd.core_final.util.ReadWriteFileUtil - File input not found
+2021-01-23 23:54:55.536 [main] ERROR com.epam.jwd.core_final.util.ReadWriteFileUtil - 1 File input not found
+2021-01-23 23:55:52.958 [main] ERROR com.epam.jwd.core_final.util.ReadWriteFileUtil - 1 File input not found
+2021-01-23 23:56:22.439 [main] ERROR com.epam.jwd.core_final.util.ReadWriteFileUtil - File 'input' not found
+2021-01-23 23:56:36.657 [main] ERROR com.epam.jwd.core_final.util.ReadWriteFileUtil - File 'input' not found.
+2021-01-23 23:57:34.821 [main] ERROR com.epam.jwd.core_final.util.ReadWriteFileUtil - File 'input' not found.
+2021-01-24 00:35:27.785 [main] ERROR com.epam.jwd.core_final.util.ReadWriteFileUtil - File 'input' not found.src\main\resources\input
+2021-01-24 00:42:15.330 [main] ERROR com.epam.jwd.core_final.util.ReadWriteFileUtil - File 'src\main\resources\input' not found.src\main\resources
+2021-01-24 00:42:46.701 [main] ERROR com.epam.jwd.core_final.util.ReadWriteFileUtil - File 'input' not found in src\main\resources
+2021-01-24 22:26:01.360 [main] ERROR com.epam.jwd.core_final.util.ReadWriteFileUtil - File 'input' not found in src\main\resources
+2021-01-26 02:46:56.690 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'crew' not found in D:\epam-course\jwd-core-finalinput
+2021-01-26 02:46:56.705 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'spaceships' not found in D:\epam-course\jwd-core-finalinput
+2021-01-26 02:47:01.507 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'crew' not found in D:\epam-course\jwd-core-finalinput
+2021-01-26 02:47:01.510 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'spaceships' not found in D:\epam-course\jwd-core-finalinput
+2021-01-26 02:56:30.954 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'crew' not found in D:\epam-course\jwd-core-finalinput
+2021-01-26 02:56:30.958 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'spaceships' not found in D:\epam-course\jwd-core-finalinput
+2021-01-26 04:47:19.871 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'crew' not found in D:\epam-course\jwd-core-finalinput
+2021-01-26 04:47:19.886 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'spaceships' not found in D:\epam-course\jwd-core-finalinput
+2021-01-26 04:47:19.892 [main] ERROR com.epam.jwd.core_final.context.impl.NasaContext - Can't create any flight mission. There is no spaceships.
+2021-01-26 04:47:19.892 [main] ERROR com.epam.jwd.core_final.Main - Error
+2021-01-26 04:49:52.835 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'crew' not found in D:\epam-course\jwd-core-final\input
+2021-01-26 04:49:52.849 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'spaceships' not found in D:\epam-course\jwd-core-final\input
+2021-01-26 04:49:52.856 [main] ERROR com.epam.jwd.core_final.context.impl.NasaContext - Can't create any flight mission. There is no spaceships.
+2021-01-26 04:49:52.858 [main] ERROR com.epam.jwd.core_final.Main - Error
+2021-01-26 04:50:29.931 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'crew' not found in \input
+2021-01-26 04:50:29.940 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'spaceships' not found in \input
+2021-01-26 04:50:29.945 [main] ERROR com.epam.jwd.core_final.context.impl.NasaContext - Can't create any flight mission. There is no spaceships.
+2021-01-26 04:50:29.945 [main] ERROR com.epam.jwd.core_final.Main - Error
+2021-01-26 04:52:09.904 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'crew' not found in src/main/resourcesinput
+2021-01-26 04:52:09.917 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'spaceships' not found in src/main/resourcesinput
+2021-01-26 04:52:09.923 [main] ERROR com.epam.jwd.core_final.context.impl.NasaContext - Can't create any flight mission. There is no spaceships.
+2021-01-26 04:52:09.924 [main] ERROR com.epam.jwd.core_final.Main - Error
+2021-01-26 04:52:19.349 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'crew' not found in src/main/resources/input
+2021-01-26 04:52:19.359 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'spaceships' not found in src/main/resources/input
+2021-01-26 04:52:19.364 [main] ERROR com.epam.jwd.core_final.context.impl.NasaContext - Can't create any flight mission. There is no spaceships.
+2021-01-26 04:52:19.365 [main] ERROR com.epam.jwd.core_final.Main - Error
+2021-01-26 04:53:54.872 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'crew' not found in src/main/resources/input
+2021-01-26 04:53:54.883 [main] ERROR com.epam.jwd.core_final.util.ReadFromFileUtil - File 'spaceships' not found in src/main/resources/input
+2021-01-26 04:53:54.888 [main] ERROR com.epam.jwd.core_final.context.impl.NasaContext - Can't create any flight mission. There is no spaceships.
+2021-01-26 04:53:54.889 [main] ERROR com.epam.jwd.core_final.Main - Error
